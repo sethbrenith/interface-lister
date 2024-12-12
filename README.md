@@ -22,6 +22,17 @@ Your Typescript code probably has more meaningful interface names than those gen
 
 With that interface definition file, any object with properties `x` and `y` would be categorized as `Point2D`, and any object with properties `width` and `height` would be categorized as `Size2D`. All other plain JS objects would be categorized as `Object`.
 
+## Using this tool
+
+```bash
+npm install
+tsc interface-lister.ts --m commonjs --target esnext
+node interface-lister.js file1.ts file2.ts [...]
+less interfaces.json
+```
+
+The generated file `interfaces.json` will include interfaces defined in the listed `.ts` files, plus any `.d.ts` files for imported modules, including the basic Typescript `lib.d.ts`.
+
 ## Limitations
 
 1. The categorization in DevTools is based on the *presence* of named properties, not the types of the values stored in those properties. This can still be useful, but is far from the rich type system you're used to in Typescript.
