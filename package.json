@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.10.1"
+  },
+  "dependencies": {
+    "@teppeis/multimaps": "^3.0.0",
+    "typescript": "^5.7.2"
+  }
+}
