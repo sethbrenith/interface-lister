@@ -217,6 +217,15 @@ export interface WithSymbols2 {
   [Symbol.species]: number;
 }
 
+// Nothing should be emitted for empty interfaces, or those with only indexed
+// properties.
+
+interface EmptyInterface {}
+
+interface OnlyIndexedInterface {
+  [x: string]: number;
+}
+
 // The blocks below exercise the two kinds of duplication that can be found:
 // matching names and matching property lists.
 
